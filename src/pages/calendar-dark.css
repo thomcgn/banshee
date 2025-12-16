@@ -1,0 +1,42 @@
+/* Darkmode für React-Calendar */
+
+.react-calendar {
+  width: 100%;
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.react-calendar__navigation button {
+  color: white;
+  background: #2c2c2c;
+  border: none;
+  font-weight: bold;
+}
+
+.react-calendar__month-view__days__day {
+  color: white;
+}
+
+.react-calendar__tile {
+  background: #2c2c2c;
+  color: white;
+  border-radius: 6px;
+  margin: 2px;
+}
+
+.react-calendar__tile--now {
+  background: #3d5afe;
+  color: white;
+}
+
+.react-calendar__tile--active {
+  background: #6200ea;
+  color: white;
+}
+
+.calendar-tile-dark {
+  color: white;
+}
