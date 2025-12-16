@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { postReservation } from "../services/api";
 import { TextField, Button, Stack, Typography } from "@mui/material";
-
+import "../pages/calendar-dark.css";
 interface ReservationFormProps {
   date: Date;
 }
@@ -44,10 +44,12 @@ export default function ReservationForm({ date }: ReservationFormProps) {
     }
   };
 
+  const inputStyle = { color: "white" };
+
   return (
     <form onSubmit={handleSubmit}>
       <Stack spacing={2}>
-        <Typography variant="subtitle1" color="white">
+        <Typography variant="subtitle1" sx={{ color: "white" }}>
           Reservierungsdetails
         </Typography>
 
@@ -58,8 +60,8 @@ export default function ReservationForm({ date }: ReservationFormProps) {
           required
           size="small"
           fullWidth
-          InputProps={{ style: { color: "white" } }}
-          InputLabelProps={{ style: { color: "white" } }}
+          InputProps={{ style: inputStyle }}
+          InputLabelProps={{ style: inputStyle }}
         />
 
         <TextField
@@ -70,33 +72,33 @@ export default function ReservationForm({ date }: ReservationFormProps) {
           required
           size="small"
           fullWidth
-          InputProps={{ style: { color: "white" } }}
-          InputLabelProps={{ style: { color: "white" } }}
+          InputProps={{ style: inputStyle }}
+          InputLabelProps={{ style: inputStyle }}
         />
 
         <TextField
           label="Personenanzahl"
           type="number"
-          min={1}
           value={people}
           onChange={(e) => setPeople(Number(e.target.value))}
           required
           size="small"
           fullWidth
-          InputProps={{ style: { color: "white" } }}
-          InputLabelProps={{ style: { color: "white" } }}
+          inputProps={{ min: 1 }}
+          InputProps={{ style: inputStyle }}
+          InputLabelProps={{ style: inputStyle }}
         />
 
         <TextField
           label="Anzahl Pittermännchen"
           type="number"
-          min={0}
           value={pittermännchen}
           onChange={(e) => setPittermännchen(Number(e.target.value))}
           size="small"
           fullWidth
-          InputProps={{ style: { color: "white" } }}
-          InputLabelProps={{ style: { color: "white" } }}
+          inputProps={{ min: 0 }}
+          InputProps={{ style: inputStyle }}
+          InputLabelProps={{ style: inputStyle }}
         />
 
         <Button type="submit" variant="contained" disabled={loading}>
