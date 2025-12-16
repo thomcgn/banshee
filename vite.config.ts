@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: "/dist", // <- Hier sicherstellen, dass die Assets im Root erreichbar sind
+  base: "/", // <- Hier sicherstellen, dass die Assets im Root erreichbar sind
   plugins: [react()],
   server: {
     port: 5173,
